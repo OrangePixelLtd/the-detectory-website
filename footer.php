@@ -46,9 +46,17 @@
             <div>
                 <h4 class="footer-heading">Legal</h4>
                 <ul class="footer-nav">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
+                    <?php
+                    $privacy_url = get_privacy_policy_url();
+                    if ( $privacy_url ) : ?>
+                        <li><a href="<?php echo esc_url( $privacy_url ); ?>"><?php esc_html_e( 'Privacy Policy', 'app-landing' ); ?></a></li>
+                    <?php endif; ?>
+                    <?php
+                    $terms_page = get_page_by_path( 'terms' );
+                    if ( $terms_page ) : ?>
+                        <li><a href="<?php echo esc_url( get_permalink( $terms_page ) ); ?>"><?php esc_html_e( 'Terms of Service', 'app-landing' ); ?></a></li>
+                    <?php endif; ?>
+                    <li><a href="#"><?php esc_html_e( 'Cookie Policy', 'app-landing' ); ?></a></li>
                 </ul>
             </div>
         </div>
@@ -58,8 +66,12 @@
                 &copy; <?php echo esc_html( date( 'Y' ) ); ?> The Detectory. All rights reserved.
             </p>
             <div class="footer-bottom-links">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
+                <?php if ( $privacy_url ) : ?>
+                    <a href="<?php echo esc_url( $privacy_url ); ?>"><?php esc_html_e( 'Privacy', 'app-landing' ); ?></a>
+                <?php endif; ?>
+                <?php if ( $terms_page ) : ?>
+                    <a href="<?php echo esc_url( get_permalink( $terms_page ) ); ?>"><?php esc_html_e( 'Terms', 'app-landing' ); ?></a>
+                <?php endif; ?>
             </div>
         </div>
     </div>

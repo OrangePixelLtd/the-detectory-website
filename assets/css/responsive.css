@@ -20,10 +20,32 @@
     .steps-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .why-split {
+        grid-template-columns: 1fr;
+    }
+
+    .why-polaroids {
+        min-height: 340px;
+        max-width: 500px;
+        margin-inline: auto;
+    }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
+    /* Disable fixed parallax on mobile — poor support on iOS */
+    .audience-bg-image,
+    .cta-bg-image {
+        position: absolute;
+    }
+
+    .section-audience,
+    .section-cta {
+        clip-path: none;
+        overflow: hidden;
+    }
+
     .audience-grid,
     .grid-3,
     .grid-2 {
@@ -145,6 +167,25 @@
         display: none;
     }
 
+    /* Polaroids */
+    .why-polaroids {
+        min-height: 300px;
+        max-width: 360px;
+    }
+
+    .polaroid-frame img {
+        width: 160px;
+        height: 120px;
+    }
+
+    .polaroid-frame {
+        padding: 8px 8px 30px;
+    }
+
+    .polaroid-caption {
+        font-size: 0.7rem;
+    }
+
     /* Features */
     .feature-card {
         flex-direction: column;
@@ -198,6 +239,16 @@
         padding: 1.25rem;
         gap: var(--spacing-md);
     }
+
+    .why-polaroids {
+        min-height: 260px;
+        max-width: 300px;
+    }
+
+    .polaroid-frame img {
+        width: 130px;
+        height: 100px;
+    }
 }
 
 /* ==========================================================================
@@ -221,6 +272,17 @@
 
     html {
         scroll-behavior: auto;
+    }
+
+    .audience-bg-image,
+    .cta-bg-image {
+        position: absolute;
+    }
+
+    .section-audience,
+    .section-cta {
+        clip-path: none;
+        overflow: hidden;
     }
 
     .hero-phone,

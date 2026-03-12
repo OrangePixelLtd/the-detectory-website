@@ -31,25 +31,48 @@ $reasons = array(
 
 <section class="section section-why" id="why">
     <div class="container">
-        <div class="why-layout">
-            <div class="why-header" data-animate="fade-in">
-                <span class="section-label">Why The Detectory</span>
-                <h2 class="section-title">Purpose-built. Not repurposed.</h2>
-                <p class="section-subtitle">
-                    There are plenty of apps that try to do everything for everyone. This isn't one of them. The Detectory does one thing well — it helps detectorists and their clubs stay organised.
-                </p>
+        <div class="why-split">
+            <div class="why-layout">
+                <div class="why-header" data-animate="fade-in">
+                    <span class="section-label">Why The Detectory</span>
+                    <h2 class="section-title">Purpose-built. Not repurposed.</h2>
+                    <p class="section-subtitle">
+                        There are plenty of apps that try to do everything for everyone. This isn't one of them. The Detectory does one thing well — it helps detectorists and their clubs stay organised.
+                    </p>
+                </div>
+
+                <div class="why-list">
+                    <?php foreach ( $reasons as $index => $reason ) : ?>
+                        <div class="why-item" data-animate="fade-in" data-animate-delay="<?php echo esc_attr( $index * 0.1 ); ?>s">
+                            <div class="why-marker" aria-hidden="true"></div>
+                            <div class="why-content">
+                                <h3 class="why-title"><?php echo esc_html( $reason['title'] ); ?></h3>
+                                <p class="why-text"><?php echo esc_html( $reason['text'] ); ?></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
 
-            <div class="why-list">
-                <?php foreach ( $reasons as $index => $reason ) : ?>
-                    <div class="why-item" data-animate="fade-in" data-animate-delay="<?php echo esc_attr( $index * 0.1 ); ?>s">
-                        <div class="why-marker" aria-hidden="true"></div>
-                        <div class="why-content">
-                            <h3 class="why-title"><?php echo esc_html( $reason['title'] ); ?></h3>
-                            <p class="why-text"><?php echo esc_html( $reason['text'] ); ?></p>
-                        </div>
+            <div class="why-polaroids" data-animate="fade-in" data-animate-delay="0.2s" aria-hidden="true">
+                <div class="polaroid polaroid--1">
+                    <div class="polaroid-frame">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/countryside.jpg' ); ?>" alt="" loading="lazy" width="280" height="200">
+                        <span class="polaroid-caption">Perfect conditions</span>
                     </div>
-                <?php endforeach; ?>
+                </div>
+                <div class="polaroid polaroid--2">
+                    <div class="polaroid-frame">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/coins-pile.jpg' ); ?>" alt="" loading="lazy" width="280" height="200">
+                        <span class="polaroid-caption">Nice finds!</span>
+                    </div>
+                </div>
+                <div class="polaroid polaroid--3">
+                    <div class="polaroid-frame">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hayling-detect.jpg' ); ?>" alt="" loading="lazy" width="280" height="200">
+                        <span class="polaroid-caption">Out detecting</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

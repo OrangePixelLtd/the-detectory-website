@@ -7,6 +7,9 @@
 ?>
 
 <section class="section section-cta" id="download">
+    <div class="cta-bg-image" aria-hidden="true">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/rolling-hills.jpg' ); ?>" alt="">
+    </div>
     <div class="cta-bg-glow" aria-hidden="true"></div>
 
     <div class="container">

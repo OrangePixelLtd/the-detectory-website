@@ -34,6 +34,9 @@ $audiences = array(
 ?>
 
 <section class="section section-audience" id="who-its-for">
+    <div class="audience-bg-image" aria-hidden="true">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/club-members.jpg' ); ?>" alt="" loading="lazy">
+    </div>
     <div class="container">
         <div class="text-center" data-animate="fade-in">
             <span class="section-label">Who It's For</span>

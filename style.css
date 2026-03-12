@@ -552,6 +552,112 @@ p + p {
 }
 
 /* ==========================================================================
+   Entry Content (pages: privacy, terms, etc.)
+   ========================================================================== */
+
+.entry-content {
+    padding-bottom: var(--spacing-section);
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.entry-content h1:first-child,
+.entry-content h2:first-child,
+.entry-content h3:first-child {
+    margin-top: 0;
+}
+
+.entry-content h2 {
+    font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+}
+
+.entry-content h3 {
+    font-size: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
+}
+
+.entry-content p {
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+}
+
+.entry-content ul,
+.entry-content ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+}
+
+.entry-content ul {
+    list-style: disc;
+}
+
+.entry-content ol {
+    list-style: decimal;
+}
+
+.entry-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+
+.entry-content li::marker {
+    color: var(--color-primary);
+}
+
+.entry-content blockquote {
+    border-left: 3px solid var(--color-primary);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--color-surface);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    color: var(--color-text);
+}
+
+.entry-content a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.entry-content a:hover {
+    text-decoration: none;
+}
+
+.entry-content strong {
+    color: var(--color-heading);
+    font-weight: 600;
+}
+
+.entry-content hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 2rem 0;
+}
+
+.entry-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.entry-content th,
+.entry-content td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+}
+
+.entry-content th {
+    background: var(--color-surface);
+    color: var(--color-heading);
+    font-weight: 600;
+}
+
+/* ==========================================================================
    Utility: Red accent line
    ========================================================================== */
 
