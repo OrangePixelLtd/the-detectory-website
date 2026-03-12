@@ -1,0 +1,568 @@
+/*
+Theme Name: The Detectory
+Theme URI: https://thedetectory.com
+Author: Nathan
+Author URI: https://thedetectory.com
+Description: A premium landing page theme for The Detectory — a private club management app for UK metal detecting clubs.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: app-landing
+*/
+
+/* ==========================================================================
+   CSS Custom Properties
+   ========================================================================== */
+
+:root {
+    --color-primary: #D91B27;
+    --color-primary-light: #FF4444;
+    --color-primary-dark: #A01520;
+    --color-bg: #0D0D0D;
+    --color-bg-alt: #1A1A1A;
+    --color-surface: #242424;
+    --color-surface-light: #2E2E2E;
+    --color-text: #B3B3B3;
+    --color-text-muted: #808080;
+    --color-heading: #FFFFFF;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-success: #00C853;
+    --color-warning: #FFAB00;
+    --color-error: #FF5252;
+
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Space Grotesk', system-ui, sans-serif;
+
+    --spacing-section: clamp(5rem, 12vw, 8rem);
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    --max-width: 1140px;
+    --radius: 12px;
+    --radius-lg: 16px;
+
+    --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    line-height: 1.7;
+    color: var(--color-text);
+    background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--color-primary-light);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--color-primary-light);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-heading);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(2.25rem, 1.8rem + 2.5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 1.4rem + 1.8vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.15rem, 1rem + 0.5vw, 1.5rem);
+}
+
+p + p {
+    margin-top: 1em;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.section {
+    padding-block: var(--spacing-section);
+    position: relative;
+}
+
+.grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all var(--transition);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(217, 27, 39, 0.3);
+    color: #fff;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--color-heading);
+    border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-text-muted);
+    color: var(--color-heading);
+    transform: translateY(-2px);
+}
+
+.btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
+}
+
+/* Store buttons */
+.store-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-heading);
+    color: var(--color-bg);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    text-decoration: none;
+    transition: all var(--transition);
+    border: 1px solid transparent;
+}
+
+.store-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+    color: var(--color-bg);
+}
+
+.store-btn svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.store-btn-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.store-btn-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+}
+
+.store-btn-store {
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+}
+
+/* Dark variant for store buttons */
+.store-btn--dark {
+    background: var(--color-surface);
+    color: var(--color-heading);
+    border-color: var(--color-border);
+}
+
+.store-btn--dark:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 25px rgba(217, 27, 39, 0.15);
+    color: var(--color-heading);
+}
+
+/* ==========================================================================
+   Section Headings
+   ========================================================================== */
+
+.section-label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.section-title {
+    margin-bottom: var(--spacing-md);
+}
+
+.section-subtitle {
+    font-size: clamp(1.05rem, 1rem + 0.25vw, 1.15rem);
+    color: var(--color-text);
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-center .section-subtitle {
+    margin-inline: auto;
+}
+
+/* ==========================================================================
+   Header / Navigation
+   ========================================================================== */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1.25rem 0;
+    transition: all 0.4s ease;
+}
+
+.site-header.is-scrolled {
+    background: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 0.75rem 0;
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.4);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-brand {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-heading);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+}
+
+.site-brand:hover {
+    color: var(--color-heading);
+}
+
+.site-brand .brand-accent {
+    color: var(--color-primary);
+}
+
+.primary-navigation ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.primary-navigation a {
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color var(--transition);
+    position: relative;
+}
+
+.primary-navigation a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width var(--transition);
+}
+
+.primary-navigation a:hover {
+    color: var(--color-heading);
+}
+
+.primary-navigation a:hover::after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-heading);
+    transition: all var(--transition);
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+
+.card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    border-color: rgba(217, 27, 39, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-brand {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-brand .brand-accent {
+    color: var(--color-primary);
+}
+
+.footer-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+    max-width: 300px;
+}
+
+.footer-heading {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-heading);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-nav li + li {
+    margin-top: 0.6rem;
+}
+
+.footer-nav a {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    transition: color var(--transition);
+}
+
+.footer-nav a:hover {
+    color: var(--color-heading);
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-bottom-links a {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--color-heading);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-heading);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all var(--transition);
+    z-index: 99;
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Utility: Red accent line
+   ========================================================================== */
+
+.accent-line {
+    width: 48px;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 3px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.text-center .accent-line {
+    margin-inline: auto;
+}

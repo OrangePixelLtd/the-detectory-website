@@ -1,0 +1,233 @@
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-grid {
+        gap: 3rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .audience-grid,
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Navigation */
+    .nav-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .primary-navigation {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 280px;
+        background: rgba(13, 13, 13, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 6rem 2rem 2rem;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1000;
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .primary-navigation.is-open {
+        transform: translateX(0);
+    }
+
+    .primary-navigation ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .primary-navigation a {
+        font-size: 1.1rem;
+    }
+
+    .nav-toggle.is-active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.is-active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Hero */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-text .store-buttons {
+        justify-content: center;
+    }
+
+    .hero-note {
+        text-align: center;
+    }
+
+    .hero-phone-wrapper {
+        max-width: 340px;
+        margin-inline: auto;
+    }
+
+    .phone-frame {
+        width: 300px;
+        border-radius: 36px;
+        padding: 11px;
+    }
+
+    .phone-notch {
+        width: 90px;
+        height: 22px;
+    }
+
+    .phone-screen,
+    .phone-screenshot,
+    .phone-video {
+        border-radius: 22px;
+    }
+
+    .hero-phone-wrapper.is-visible .hero-phone {
+        transform: translateX(0) rotateY(-4deg) rotateX(1deg) rotateZ(0deg);
+    }
+
+    /* Steps */
+    .steps-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-inline: auto;
+    }
+
+    .step {
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+
+    .step-number {
+        font-size: 1.75rem;
+        min-width: 48px;
+    }
+
+    .step-connector {
+        display: none;
+    }
+
+    /* Features */
+    .feature-card {
+        flex-direction: column;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-about {
+        text-align: center;
+    }
+
+    .footer-about .store-buttons {
+        justify-content: center;
+    }
+
+    .footer-nav {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .store-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .store-btn {
+        justify-content: center;
+    }
+
+    .hero-phone-wrapper {
+        max-width: 280px;
+    }
+
+    .phone-frame {
+        width: 250px;
+    }
+
+    .problem-item {
+        padding: 1.25rem;
+        gap: var(--spacing-md);
+    }
+}
+
+/* ==========================================================================
+   Accessibility: Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    [data-animate] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .hero-phone,
+    .hero-phone-wrapper.is-visible .hero-phone {
+        transform: none;
+        opacity: 1;
+        animation: none;
+        transition: none;
+    }
+}
