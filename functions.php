@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'APP_LANDING_VERSION', '1.0.0' );
+define( 'APP_LANDING_VERSION', '1.1.0' );
 
 /**
  * Theme Setup
@@ -111,6 +111,39 @@ function app_landing_customizer_css() {
     wp_add_inline_style( 'app-landing-style', $css );
 }
 add_action( 'wp_enqueue_scripts', 'app_landing_customizer_css', 20 );
+
+/**
+ * App-mode: serve bare content when ?source=app is present.
+ *
+ * Usage: thedetectory.com/privacy-policy/?source=app
+ * Returns styled page content without header, footer, or nav.
+ */
+function app_landing_app_mode_template( $template ) {
+    if ( ! isset( $_GET['source'] ) || 'app' !== $_GET['source'] ) {
+        return $template;
+    }
+
+    if ( ! is_singular() ) {
+        return $template;
+    }
+
+    return get_template_directory() . '/template-app.php';
+}
+add_filter( 'template_include', 'app_landing_app_mode_template' );
+
+/**
+ * Output favicon meta tags
+ */
+function app_landing_favicons() {
+    $uri = get_template_directory_uri() . '/assets/images/favicon';
+    ?>
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url( $uri . '/apple-touch-icon.png' ); ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url( $uri . '/favicon-32x32.png' ); ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo esc_url( $uri . '/favicon-16x16.png' ); ?>">
+    <link rel="manifest" href="<?php echo esc_url( $uri . '/site.webmanifest' ); ?>">
+    <?php
+}
+add_action( 'wp_head', 'app_landing_favicons', 5 );
 
 /**
  * Includes

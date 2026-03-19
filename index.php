@@ -17,6 +17,10 @@ get_header();
                 ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <h1 style="margin-bottom: 2rem;"><?php the_title(); ?></h1>
+                    <p class="last-updated"><?php
+                        /* translators: %s: date the page was last modified */
+                        printf( esc_html__( 'Last updated: %s', 'app-landing' ), get_the_modified_date() );
+                    ?></p>
                     <div class="entry-content">
                         <?php the_content(); ?>
                     </div>

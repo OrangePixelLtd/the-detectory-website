@@ -15,7 +15,7 @@
                 <div class="site-brand"><?php the_custom_logo(); ?></div>
             <?php else : ?>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-brand">
-                    the <span class="brand-accent">detectory</span>
+                    the<span class="brand-accent">detectory</span>
                 </a>
             <?php endif; ?>
 
@@ -24,28 +24,34 @@
                 <span></span>
                 <span></span>
             </button>
-
-            <nav class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary', 'app-landing' ); ?>">
-                <?php
-                if ( has_nav_menu( 'primary' ) ) {
-                    wp_nav_menu( array(
-                        'theme_location' => 'primary',
-                        'container'      => false,
-                        'depth'          => 1,
-                        'fallback_cb'    => false,
-                    ) );
-                } else {
-                    ?>
-                    <ul>
-                        <li><a href="#features"><?php esc_html_e( 'Features', 'app-landing' ); ?></a></li>
-                        <li><a href="#how-it-works"><?php esc_html_e( 'How It Works', 'app-landing' ); ?></a></li>
-                        <li><a href="#why"><?php esc_html_e( 'Why Us', 'app-landing' ); ?></a></li>
-                        <li><a href="#download" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;"><?php esc_html_e( 'Download', 'app-landing' ); ?></a></li>
-                    </ul>
-                    <?php
-                }
-                ?>
-            </nav>
         </div>
     </div>
 </header>
+
+<nav class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary', 'app-landing' ); ?>">
+    <button class="nav-close" aria-label="<?php esc_attr_e( 'Close menu', 'app-landing' ); ?>">
+        <span></span>
+        <span></span>
+    </button>
+    <?php
+    if ( has_nav_menu( 'primary' ) ) {
+        wp_nav_menu( array(
+            'theme_location' => 'primary',
+            'container'      => false,
+            'depth'          => 1,
+            'fallback_cb'    => false,
+        ) );
+    } else {
+        ?>
+        <ul>
+            <li><a href="#who-its-for"><?php esc_html_e( 'Who It\'s For', 'app-landing' ); ?></a></li>
+            <li><a href="#benefits"><?php esc_html_e( 'Benefits', 'app-landing' ); ?></a></li>
+            <li><a href="#how-it-works"><?php esc_html_e( 'How It Works', 'app-landing' ); ?></a></li>
+            <li><a href="#features"><?php esc_html_e( 'Features', 'app-landing' ); ?></a></li>
+            <li><a href="#why"><?php esc_html_e( 'Why Us', 'app-landing' ); ?></a></li>
+            <li><a href="#download" class="btn btn-primary nav-cta"><?php esc_html_e( 'Download', 'app-landing' ); ?></a></li>
+        </ul>
+        <?php
+    }
+    ?>
+</nav>

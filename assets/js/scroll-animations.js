@@ -71,15 +71,28 @@ document.addEventListener('DOMContentLoaded', () => {
             ([entry]) => {
                 header.classList.toggle('is-scrolled', !entry.isIntersecting);
             },
-            { threshold: 0.1 }
+            { threshold: 0.85 }
         );
 
         headerObserver.observe(hero);
+    } else if (header) {
+        // No hero section (inner pages) — toggle on scroll position
+        const updateHeader = () => {
+            header.classList.toggle('is-scrolled', window.scrollY > 50);
+        };
+        updateHeader();
+        window.addEventListener('scroll', updateHeader, { passive: true });
     }
 
     // 4. Mobile navigation toggle
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.primary-navigation');
+
+    const closeNav = () => {
+        nav.classList.remove('is-open');
+        toggle.classList.remove('is-active');
+        toggle.setAttribute('aria-expanded', 'false');
+    };
 
     if (toggle && nav) {
         toggle.addEventListener('click', () => {
@@ -88,17 +101,48 @@ document.addEventListener('DOMContentLoaded', () => {
             toggle.setAttribute('aria-expanded', String(isOpen));
         });
 
+        // Close button inside overlay
+        const navCloseBtn = nav.querySelector('.nav-close');
+        if (navCloseBtn) {
+            navCloseBtn.addEventListener('click', closeNav);
+        }
+
         // Close nav on link click
         nav.querySelectorAll('a').forEach((link) => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('is-open');
-                toggle.classList.remove('is-active');
-                toggle.setAttribute('aria-expanded', 'false');
-            });
+            link.addEventListener('click', closeNav);
         });
     }
 
-    // 5. Phone 3D tilt on scroll
+    // 5. Active nav link highlighting on scroll
+    const navLinks = document.querySelectorAll('.primary-navigation a[href^="#"]');
+
+    if (navLinks.length && 'IntersectionObserver' in window) {
+        const sections = [];
+
+        navLinks.forEach((link) => {
+            const id = link.getAttribute('href').slice(1);
+            const section = document.getElementById(id);
+            if (section) {
+                sections.push({ section, link });
+            }
+        });
+
+        const navObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const match = sections.find((s) => s.section === entry.target);
+                    if (match) {
+                        match.link.classList.toggle('is-active', entry.isIntersecting);
+                    }
+                });
+            },
+            { threshold: 0, rootMargin: '-50% 0px -50% 0px' }
+        );
+
+        sections.forEach((s) => navObserver.observe(s.section));
+    }
+
+    // 6. Phone 3D tilt on scroll
     const phoneTilt = document.querySelector('[data-phone-tilt]');
     const phoneWrapper = document.querySelector('.hero-phone-wrapper');
 
@@ -144,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Back-to-top button
+    // 7. Back-to-top button
     const backToTop = document.querySelector('.back-to-top');
 
     if (backToTop) {
