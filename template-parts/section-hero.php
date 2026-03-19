@@ -13,7 +13,7 @@
         <div class="hero-grid">
             <div class="hero-intro">
                 <h1 class="hero-title" data-animate="fade-in">
-                    The modern app for detecting clubs and detectorists
+                    The modern app for <span class="text-gradient">detecting clubs</span> and detectorists
                 </h1>
 
                 <p class="hero-subtitle" data-animate="fade-in" data-animate-delay="0.1s">

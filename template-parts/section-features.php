@@ -40,6 +40,9 @@ $features = array(
 ?>
 
 <section class="section section-features" id="features">
+    <div class="features-bg-image" aria-hidden="true">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hayling-detect.jpg' ); ?>" alt="" loading="lazy">
+    </div>
     <div class="container">
         <div class="text-center" data-animate="fade-in">
             <span class="section-label">Features</span>

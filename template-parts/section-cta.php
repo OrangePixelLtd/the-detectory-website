@@ -15,7 +15,7 @@
     <div class="container">
         <div class="cta-content" data-animate="fade-in">
             <span class="section-label">Get The App</span>
-            <h2 class="cta-title">A better way to detect</h2>
+            <h2 class="cta-title">A better way to <span class="text-gradient">detect</span></h2>
             <p class="cta-text">
                 Whether you run a club, belong to one, or detect on your own — The Detectory keeps everything organised in one place. Free to download.
             </p>

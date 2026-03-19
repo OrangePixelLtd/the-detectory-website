@@ -45,9 +45,6 @@ $steps = array(
                         <h3 class="step-title"><?php echo esc_html( $step['title'] ); ?></h3>
                         <p class="step-text"><?php echo esc_html( $step['text'] ); ?></p>
                     </div>
-                    <?php if ( $index < count( $steps ) - 1 ) : ?>
-                        <div class="step-connector" aria-hidden="true"></div>
-                    <?php endif; ?>
                 </div>
             <?php endforeach; ?>
         </div>
