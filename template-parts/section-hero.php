@@ -36,8 +36,8 @@
                                     preload="auto"
                                     poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/homescreen.webp' ); ?>"
                                 >
-                                    <source src="<?php echo esc_url( get_template_directory_uri() . '/assets/videos/post-announcement-opt.webm' ); ?>" type="video/webm">
-                                    <source src="<?php echo esc_url( get_template_directory_uri() . '/assets/videos/post-announcement-opt.mp4' ); ?>" type="video/mp4">
+                                    <source src="<?php echo esc_url( get_template_directory_uri() . '/assets/videos/dmdc-demo-opt.webm' ); ?>" type="video/webm">
+                                    <source src="<?php echo esc_url( get_template_directory_uri() . '/assets/videos/dmdc-demo-opt.mp4' ); ?>" type="video/mp4">
                                 </video>
                             </div>
                             <div class="phone-home-bar" aria-hidden="true"></div>

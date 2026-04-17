@@ -209,4 +209,35 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+    // 8. Feature showcase — hover/focus swaps the phone screen
+    const featureItems = document.querySelectorAll('.feature-item[data-feature-target]');
+    const featureImages = document.querySelectorAll('.features-screenshot[data-feature-image]');
+
+    if (featureItems.length && featureImages.length) {
+        const activate = (target) => {
+            featureItems.forEach((item) => {
+                item.classList.toggle('is-active', item.dataset.featureTarget === target);
+            });
+            featureImages.forEach((el) => {
+                const isActive = el.dataset.featureImage === target;
+                el.classList.toggle('is-active', isActive);
+                if (el.tagName === 'VIDEO') {
+                    if (isActive) {
+                        el.currentTime = 0;
+                        el.play().catch(() => {});
+                    } else {
+                        el.pause();
+                    }
+                }
+            });
+        };
+
+        featureItems.forEach((item) => {
+            const target = item.dataset.featureTarget;
+            item.addEventListener('mouseenter', () => activate(target));
+            item.addEventListener('focus', () => activate(target));
+            item.addEventListener('click', () => activate(target));
+        });
+    }
 });

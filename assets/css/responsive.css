@@ -34,6 +34,15 @@
         max-width: 500px;
         margin-inline: auto;
     }
+
+    .features-showcase {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .features-showcase-phone {
+        position: static;
+    }
 }
 
 /* Mobile */
@@ -56,6 +65,19 @@
     .grid-3,
     .grid-2 {
         grid-template-columns: 1fr;
+    }
+
+    .features-showcase {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .features-showcase-phone {
+        position: static;
+    }
+
+    .feature-item {
+        padding: 1rem 1.25rem;
     }
 
     /* Navigation — full-page overlay */

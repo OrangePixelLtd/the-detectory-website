@@ -19,7 +19,26 @@
       "Bash(python -c \"\nimport os\nbase = r'C:\\\\Users\\\\Nathan\\\\Documents\\\\WordPressTheme\\\\assets\\\\videos'\nfiles = ['post-announcement.mp4', 'post-announcement-opt.mp4', 'post-announcement-opt.webm']\norig = os.path.getsize\\(os.path.join\\(base, files[0]\\)\\)\nfor f in files:\n    size = os.path.getsize\\(os.path.join\\(base, f\\)\\)\n    pct = f'  \\({100 - \\(size/orig*100\\):.0f}% smaller\\)' if f != files[0] else '  \\(original, 32s\\)'\n    print\\(f'{f:40s}  {size/1024:>7.0f} KB{pct}'\\)\n\")",
       "Read(//c/Users/Nathan/AppData/Local/Temp/Rar$DIa29256.29613/**)",
       "Bash(LOG=\"C:\\\\Users\\\\Nathan\\\\AppData\\\\Local\\\\Temp\\\\Rar$DIa29256.29613\\\\portsmouthwater.co.uk-ssl_log\" echo \"=== passkey-endpoints 404 response size ===\" grep 'passkey-endpoints' \"$LOG\")",
-      "Read(//c/Users/Nathan/Documents/WordPressTheme/**)"
+      "Read(//c/Users/Nathan/Documents/WordPressTheme/**)",
+      "Bash(ffmpeg -version)",
+      "Bash(ffprobe -v error -show_entries format=duration,size,bit_rate:stream=codec_name,width,height,r_frame_rate,duration -of default=noprint_wrappers=0 \"assets/videos/dmdc-demo.mp4\")",
+      "Bash(ffmpeg -y -i dmdc-demo.mp4 -filter:v \"setpts=PTS/3.004,fps=30\" -an -c:v libx264 -profile:v high -preset slow -crf 26 -pix_fmt yuv420p -movflags +faststart dmdc-demo-opt.mp4)",
+      "Bash(ffmpeg -y -i dmdc-demo.mp4 -filter:v \"setpts=PTS/3.004,fps=30\" -an -c:v libvpx-vp9 -b:v 0 -crf 34 -row-mt 1 -deadline good -cpu-used 2 dmdc-demo-opt.webm)",
+      "Bash(ffmpeg -y -i \"assets/videos/dmdc-demo.mp4\" -filter:v \"setpts=PTS/3.004,fps=30\" -an -c:v libvpx-vp9 -b:v 0 -crf 34 -row-mt 1 -deadline good -cpu-used 2 \"assets/videos/dmdc-demo-opt.webm\")",
+      "Bash(ffmpeg -y -i /c/Users/Nathan/Documents/WordPressTheme/assets/videos/dmdc-demo.mp4 -filter:v \"setpts=PTS/3.004,fps=30\" -an -c:v libvpx-vp9 -b:v 0 -crf 34 -row-mt 1 -deadline good -cpu-used 2 /c/Users/Nathan/Documents/WordPressTheme/assets/videos/dmdc-demo-opt.webm)",
+      "Bash(ffprobe -v error -show_entries format=duration,size -of default=noprint_wrappers=1 /c/Users/Nathan/Documents/WordPressTheme/assets/videos/dmdc-demo-opt.mp4)",
+      "Bash(ffprobe -v error -show_entries format=duration,size -of default=noprint_wrappers=1 /c/Users/Nathan/Documents/WordPressTheme/assets/videos/dmdc-demo-opt.webm)",
+      "Bash(ffmpeg -y -i /c/Users/Nathan/Documents/WordPressTheme/assets/videos/dmdc-demo.mp4 -vf \"fps=1,scale=160:-1,drawtext=text='%{pts\\\\:hms}':x=4:y=4:fontsize=18:fontcolor=white:box=1:boxcolor=black@0.7:boxborderw=3,tile=9x5\" -frames:v 1 /tmp/dmdc-contact-sheet.png)",
+      "Read(//tmp/**)",
+      "Bash(ffmpeg -y -i /c/Users/Nathan/Documents/WordPressTheme/assets/videos/dmdc-demo.mp4 -vf \"fps=1,scale=280:-1,drawtext=text='%{pts\\\\:hms}':x=6:y=6:fontsize=28:fontcolor=white:box=1:boxcolor=black@0.75:boxborderw=4,tile=5x9\" -frames:v 1 /c/Users/Nathan/Documents/WordPressTheme/dmdc-contact-sheet.png)",
+      "Bash(ffmpeg -y -ss 0 -t 15 -i assets/videos/dmdc-demo.mp4 -vf \"fps=1,scale=360:-1,drawtext=text='%{eif\\\\:t\\\\:d}s':x=8:y=8:fontsize=36:fontcolor=white:box=1:boxcolor=black@0.8:boxborderw=5,tile=5x3\" -frames:v 1 sheet-1.png)",
+      "Bash(ffmpeg -y -ss 15 -t 15 -i assets/videos/dmdc-demo.mp4 -vf \"fps=1,scale=360:-1,drawtext=text='%{eif\\\\:t+15\\\\:d}s':x=8:y=8:fontsize=36:fontcolor=white:box=1:boxcolor=black@0.8:boxborderw=5,tile=5x3\" -frames:v 1 sheet-2.png)",
+      "Bash(ffmpeg -y -ss 30 -t 15 -i assets/videos/dmdc-demo.mp4 -vf \"fps=1,scale=360:-1,drawtext=text='%{eif\\\\:t+30\\\\:d}s':x=8:y=8:fontsize=36:fontcolor=white:box=1:boxcolor=black@0.8:boxborderw=5,tile=5x3\" -frames:v 1 sheet-3.png)",
+      "Bash(ffmpeg -y -i assets/videos/dmdc-demo.mp4 -filter_complex \"[0:v]trim=0:10,setpts=PTS-STARTPTS[a];[0:v]trim=25:45,setpts=PTS-STARTPTS[b];[a][b]concat=n=2:v=1[c];[c]setpts=PTS/2,fps=30[v]\" -map \"[v]\" -an -c:v libx264 -profile:v high -preset slow -crf 26 -pix_fmt yuv420p -movflags +faststart assets/videos/dmdc-demo-opt.mp4)",
+      "Bash(ffmpeg -y -i assets/videos/dmdc-demo.mp4 -filter_complex \"[0:v]trim=0:10,setpts=PTS-STARTPTS[a];[0:v]trim=25:45,setpts=PTS-STARTPTS[b];[a][b]concat=n=2:v=1[c];[c]setpts=PTS/2,fps=30[v]\" -map \"[v]\" -an -c:v libx264 -profile:v high -preset slow -crf 30 -pix_fmt yuv420p -movflags +faststart assets/videos/dmdc-demo-opt.mp4)",
+      "Bash(ffmpeg -y -i assets/videos/dmdc-demo.mp4 -filter_complex \"[0:v]trim=0:10,setpts=PTS-STARTPTS[a];[0:v]trim=25:45,setpts=PTS-STARTPTS[b];[a][b]concat=n=2:v=1[c];[c]setpts=PTS/1.5,fps=30,scale=300:-2:flags=lanczos[v]\" -map \"[v]\" -an -c:v libx264 -profile:v high -preset slow -crf 30 -pix_fmt yuv420p -movflags +faststart assets/videos/dmdc-demo-opt.mp4)",
+      "Bash(ffmpeg -y -i assets/videos/dmdc-demo.mp4 -filter_complex \"[0:v]trim=0:10,setpts=PTS-STARTPTS[a];[0:v]trim=25:45,setpts=PTS-STARTPTS[b];[a][b]concat=n=2:v=1[c];[c]setpts=PTS/1.5,fps=30,scale=300:-2:flags=lanczos[v]\" -map \"[v]\" -an -c:v libvpx-vp9 -b:v 0 -crf 38 -row-mt 1 -deadline good -cpu-used 2 assets/videos/dmdc-demo-opt.webm)",
+      "Bash(ffprobe -v error -show_entries format=duration,size:stream=codec_name,width,height -of default=noprint_wrappers=0 assets/videos/log-find.mp4)"
     ]
   }
 }
