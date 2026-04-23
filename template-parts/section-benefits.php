@@ -23,8 +23,8 @@ $benefits = array(
     ),
     array(
         'icon'  => 'smartphone',
-        'title' => 'Mobile-first and simple',
-        'text'  => 'Designed for phones first. Quick to open, easy to use, no training needed.',
+        'title' => 'A phone app, through and through',
+        'text'  => 'No web version, no clunky desktop bolt-on — just an app that opens fast, does what you need, and gets out of the way.',
     ),
     array(
         'icon'  => 'compass',

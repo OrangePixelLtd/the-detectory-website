@@ -126,5 +126,58 @@ $features = array(
                 <?php endforeach; ?>
             </div>
         </div>
+
+        <div class="features-carousel swiper" aria-label="Feature highlights">
+            <div class="swiper-wrapper">
+                <?php foreach ( $features as $index => $feature ) : ?>
+                    <article class="swiper-slide features-card">
+                        <div class="features-card-phone">
+                            <div class="phone-frame">
+                                <div class="phone-notch" aria-hidden="true"></div>
+                                <div class="phone-screen">
+                                    <?php if ( ! empty( $feature['video'] ) ) : ?>
+                                        <video
+                                            class="phone-video features-card-media"
+                                            muted
+                                            loop
+                                            playsinline
+                                            preload="metadata"
+                                            aria-label="<?php echo esc_attr( $feature['alt'] ); ?>"
+                                            <?php if ( ! empty( $feature['poster'] ) ) : ?>
+                                                poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/' . $feature['poster'] ); ?>"
+                                            <?php endif; ?>
+                                            width="300"
+                                            height="662"
+                                        >
+                                            <source src="<?php echo esc_url( get_template_directory_uri() . '/assets/videos/' . $feature['video'] . '.webm' ); ?>" type="video/webm">
+                                            <source src="<?php echo esc_url( get_template_directory_uri() . '/assets/videos/' . $feature['video'] . '.mp4' ); ?>" type="video/mp4">
+                                        </video>
+                                    <?php else : ?>
+                                        <img
+                                            class="phone-screenshot features-card-media"
+                                            src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/' . $feature['image'] ); ?>"
+                                            alt="<?php echo esc_attr( $feature['alt'] ); ?>"
+                                            loading="lazy"
+                                            width="300"
+                                            height="650"
+                                        >
+                                    <?php endif; ?>
+                                </div>
+                                <div class="phone-home-bar" aria-hidden="true"></div>
+                            </div>
+                        </div>
+                        <div class="features-card-body">
+                            <div class="feature-icon">
+                                <?php echo app_landing_get_svg_icon( $feature['icon'] ); ?>
+                            </div>
+                            <h3 class="feature-title"><?php echo esc_html( $feature['title'] ); ?></h3>
+                            <p class="feature-text"><?php echo esc_html( $feature['text'] ); ?></p>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
     </div>
 </section>

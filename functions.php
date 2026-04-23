@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'APP_LANDING_VERSION', '1.2.17' );
+define( 'APP_LANDING_VERSION', '1.2.35' );
 
 /**
  * Theme Setup
@@ -59,9 +59,16 @@ function app_landing_scripts() {
     );
 
     wp_enqueue_style(
+        'swiper-css',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        array(),
+        '11'
+    );
+
+    wp_enqueue_style(
         'app-landing-animations',
         get_template_directory_uri() . '/assets/css/animations.css',
-        array( 'app-landing-style' ),
+        array( 'app-landing-style', 'swiper-css' ),
         APP_LANDING_VERSION
     );
 
@@ -74,9 +81,17 @@ function app_landing_scripts() {
 
     // Scripts
     wp_enqueue_script(
+        'swiper-js',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        array(),
+        '11',
+        true
+    );
+
+    wp_enqueue_script(
         'app-landing-scroll',
         get_template_directory_uri() . '/assets/js/scroll-animations.js',
-        array(),
+        array( 'swiper-js' ),
         APP_LANDING_VERSION,
         true
     );

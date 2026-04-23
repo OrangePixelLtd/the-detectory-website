@@ -67,17 +67,53 @@
         grid-template-columns: 1fr;
     }
 
-    .features-showcase {
+    .waitlist-form .ginput_complex {
         grid-template-columns: 1fr;
-        gap: 2rem;
     }
 
-    .features-showcase-phone {
-        position: static;
+    .features-showcase {
+        display: none;
+    }
+
+    .features-carousel {
+        display: block;
     }
 
     .feature-item {
         padding: 1rem 1.25rem;
+    }
+
+    /* Typography — larger body copy for mobile readability
+       (core demographic skews older — WCAG recommends ≥16px, we aim ~17px) */
+    body {
+        font-size: clamp(1.0625rem, 1rem + 0.5vw, 1.15rem);
+        line-height: 1.7;
+    }
+
+    .audience-text,
+    .problem-text,
+    .benefit-text,
+    .step-text,
+    .feature-text,
+    .why-text {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .hero-note,
+    .cta-note,
+    .section-label {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .feature-title,
+    .problem-title,
+    .benefit-title,
+    .step-title,
+    .why-title,
+    .audience-title {
+        font-size: 1.2rem;
     }
 
     /* Navigation — full-page overlay */
@@ -375,6 +411,10 @@
 
     .phone-frame {
         width: 250px;
+    }
+
+    .features-card-phone {
+        width: 190px;
     }
 
     .problem-item {

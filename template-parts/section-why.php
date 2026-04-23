@@ -7,24 +7,24 @@
 
 $reasons = array(
     array(
-        'title' => 'Built specifically for detectorists',
-        'text'  => 'Not a generic social network. Not a repurposed business tool. Every feature was designed around how UK detectorists and their clubs actually operate.',
+        'title' => 'Built by a detectorist, who happens to be a developer',
+        'text'  => 'I detect. I\'ve sat in club meets where half the membership didn\'t know the rally had moved. Every feature in The Detectory exists because I wanted it to exist for my own club first.',
     ),
     array(
-        'title' => 'Private by default',
-        'text'  => 'Your club, your finds, your data. Nothing is public unless you decide it should be. No algorithms, no strangers, no data harvesting.',
+        'title' => 'Private by default, always',
+        'text'  => 'Your club, your finds, your data, and nobody else\'s business. No adverts. No algorithms. No strangers scrolling past your best hammered.',
     ),
     array(
-        'title' => 'Useful whether you\'re in a club or not',
-        'text'  => 'Club organisers get proper management tools. Members get a cleaner experience. Solo detectorists get a private space to log finds and stay organised.',
+        'title' => 'Works in a club, or on your own',
+        'text'  => 'Running a club? The admin is sorted. In a club? A cleaner feed and fewer missed messages. Out on your own? A private finds diary, backed up and there whenever you open the app — new phone, old phone, or a coffee shop in France.',
     ),
     array(
-        'title' => 'Modern and mobile-first',
-        'text'  => 'Built for how people use their phones today. Fast, clean, and easy to use whether you\'re at home or standing in a field.',
+        'title' => 'Fast, even in a field',
+        'text'  => 'Built for how you actually use a phone — on the sofa, at the pub, or standing on a headland with one bar of signal. Quick to open, quick to do what you need, quick to put away.',
     ),
     array(
-        'title' => 'Solves real problems',
-        'text'  => 'No more chasing RSVPs in group chats, missing event details, or losing track of what you\'ve found. One app, everything in one place.',
+        'title' => 'For the bits between the digs',
+        'text'  => 'The part of detecting that isn\'t detecting — the RSVPs, the permissions, the write-ups — is the part that eats the most time. The Detectory gives that time back.',
     ),
 );
 ?>
@@ -35,9 +35,9 @@ $reasons = array(
             <div class="why-layout">
                 <div class="why-header" data-animate="fade-in">
                     <span class="section-label">Why The Detectory</span>
-                    <h2 class="section-title">Purpose-built. Not repurposed.</h2>
+                    <h2 class="section-title">Made by a detectorist, for detectorists.</h2>
                     <p class="section-subtitle">
-                        There are plenty of apps that try to do everything for everyone. This isn't one of them. The Detectory does one thing well — it helps detectorists and their clubs stay organised.
+                        I built The Detectory because I kept losing Saturdays to my club's group chat. It does one thing: it helps detectorists and their clubs stay organised, without getting in the way of the actual detecting.
                     </p>
                 </div>
 

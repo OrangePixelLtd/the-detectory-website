@@ -49,7 +49,7 @@
             <li><a href="#how-it-works"><?php esc_html_e( 'How It Works', 'app-landing' ); ?></a></li>
             <li><a href="#features"><?php esc_html_e( 'Features', 'app-landing' ); ?></a></li>
             <li><a href="#why"><?php esc_html_e( 'Why Us', 'app-landing' ); ?></a></li>
-            <li><a href="#download" class="btn btn-primary nav-cta"><?php esc_html_e( 'Download', 'app-landing' ); ?></a></li>
+            <li><a href="#waitlist" class="btn btn-primary nav-cta"><?php esc_html_e( 'Join Waitlist', 'app-landing' ); ?></a></li>
         </ul>
         <?php
     }

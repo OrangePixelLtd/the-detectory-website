@@ -240,4 +240,36 @@ document.addEventListener('DOMContentLoaded', () => {
             item.addEventListener('click', () => activate(target));
         });
     }
+
+    // 9. Features carousel (mobile) — Swiper
+    if (typeof Swiper !== 'undefined' && document.querySelector('.features-carousel.swiper')) {
+        const playActive = (swiper) => {
+            swiper.slides.forEach((slide, i) => {
+                const v = slide.querySelector('video');
+                if (!v) return;
+                if (i === swiper.activeIndex) {
+                    v.currentTime = 0;
+                    v.play().catch(() => {});
+                } else {
+                    v.pause();
+                }
+            });
+        };
+
+        new Swiper('.features-carousel.swiper', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 16,
+            grabCursor: true,
+            watchSlidesProgress: true,
+            pagination: {
+                el: '.features-carousel .swiper-pagination',
+                clickable: true,
+            },
+            on: {
+                init: playActive,
+                slideChange: playActive,
+            },
+        });
+    }
 });

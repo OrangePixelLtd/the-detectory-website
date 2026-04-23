@@ -8,28 +8,28 @@
 $problems = array(
     array(
         'icon'  => 'message-circle',
-        'title' => 'Event details buried in chat',
-        'text'  => 'Important dig info lost in endless WhatsApp threads. Members miss dates, times, and locations.',
+        'title' => 'Where\'s this Saturday\'s dig?',
+        'text'  => 'Scrolling back through 200 messages on a Friday night to find the farm gate location, because someone posted it in the group chat at some point.',
     ),
     array(
         'icon'  => 'help-circle',
-        'title' => 'RSVP confusion',
-        'text'  => 'No clear way to know who is coming. Organisers end up chasing replies across multiple channels.',
+        'title' => 'Who\'s actually turning up?',
+        'text'  => 'Three thumbs-ups, two question marks, and one "maybe if the weather holds". The organiser\'s still guessing how many sausage rolls to order.',
     ),
     array(
         'icon'  => 'clipboard',
-        'title' => 'Paper sign-in sheets',
-        'text'  => 'Still passing around clipboards at the gate. Records get lost, damaged, or never digitised.',
+        'title' => 'Clipboards. Always clipboards.',
+        'text'  => 'Sign your name, tick a box, and hope the paper doesn\'t end up in a muddy puddle before it makes it back to the secretary.',
     ),
     array(
         'icon'  => 'bell-off',
-        'title' => 'Missed member updates',
-        'text'  => 'Not everyone checks the group chat. Important news about permissions, rules, or finds goes unseen.',
+        'title' => 'Half the club missed the message',
+        'text'  => 'Posted on WhatsApp. Shared on Facebook. Pinned to the noticeboard. Three members still turn up at the wrong field.',
     ),
     array(
         'icon'  => 'layers',
-        'title' => 'Too many disconnected tools',
-        'text'  => 'WhatsApp for chat, email for notices, spreadsheets for members, paper for attendance. Nothing connects.',
+        'title' => 'A different tool for every job',
+        'text'  => 'WhatsApp for chat. A spreadsheet for members. Email for notices. A biscuit tin of permissions. Somehow it all has to stay straight.',
     ),
 );
 ?>
@@ -39,7 +39,7 @@ $problems = array(
         <div class="text-center" data-animate="fade-in">
             <span class="section-label">The Problem</span>
             <h2 class="section-title">Sound familiar?</h2>
-            <p class="section-subtitle">Club life shouldn't mean juggling five different tools and hoping nothing falls through the cracks.</p>
+            <p class="section-subtitle">If you run a club, or belong to one, you've probably lived every one of these.</p>
         </div>
 
         <div class="problem-grid">
