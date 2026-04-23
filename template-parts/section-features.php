@@ -180,4 +180,44 @@ $features = array(
             <div class="swiper-pagination"></div>
         </div>
     </div>
+
+    <div class="features-lightbox" role="dialog" aria-modal="true" aria-label="Feature screenshot viewer" aria-hidden="true">
+        <button type="button" class="features-lightbox-close" aria-label="Close">&times;</button>
+        <div class="features-lightbox-swiper swiper">
+            <div class="swiper-wrapper">
+                <?php foreach ( $features as $index => $feature ) : ?>
+                    <div class="swiper-slide">
+                        <?php if ( ! empty( $feature['video'] ) ) : ?>
+                            <video
+                                class="features-lightbox-media"
+                                controls
+                                playsinline
+                                loop
+                                muted
+                                preload="metadata"
+                                aria-label="<?php echo esc_attr( $feature['alt'] ); ?>"
+                                <?php if ( ! empty( $feature['poster'] ) ) : ?>
+                                    poster="<?php echo esc_url( get_template_directory_uri() . '/assets/images/' . $feature['poster'] ); ?>"
+                                <?php endif; ?>
+                            >
+                                <source src="<?php echo esc_url( get_template_directory_uri() . '/assets/videos/' . $feature['video'] . '.webm' ); ?>" type="video/webm">
+                                <source src="<?php echo esc_url( get_template_directory_uri() . '/assets/videos/' . $feature['video'] . '.mp4' ); ?>" type="video/mp4">
+                            </video>
+                        <?php else : ?>
+                            <div class="swiper-zoom-container">
+                                <img
+                                    class="features-lightbox-media"
+                                    src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/' . $feature['image'] ); ?>"
+                                    alt="<?php echo esc_attr( $feature['alt'] ); ?>"
+                                    loading="lazy"
+                                >
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <div class="swiper-button-prev" aria-label="Previous screenshot"></div>
+            <div class="swiper-button-next" aria-label="Next screenshot"></div>
+        </div>
+    </div>
 </section>

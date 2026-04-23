@@ -1199,3 +1199,97 @@
     outline: 2px solid var(--color-primary);
     outline-offset: 3px;
 }
+
+/* Hint that media is tappable */
+.features-card .phone-screen {
+    cursor: zoom-in;
+}
+
+/* === Features lightbox === */
+.features-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.features-lightbox.is-open {
+    display: block;
+    opacity: 1;
+}
+
+.features-lightbox-swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.features-lightbox-swiper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+.features-lightbox-swiper .swiper-zoom-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.features-lightbox-swiper img,
+.features-lightbox-swiper video {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.features-lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.features-lightbox-close:hover,
+.features-lightbox-close:focus-visible {
+    background: rgba(255, 255, 255, 0.25);
+    outline: none;
+}
+
+.features-lightbox-swiper .swiper-button-prev,
+.features-lightbox-swiper .swiper-button-next {
+    color: #fff;
+}
+
+.features-lightbox-swiper .swiper-button-prev::after,
+.features-lightbox-swiper .swiper-button-next::after {
+    font-size: 1.5rem;
+}
+
+/* Lock body scroll while lightbox open */
+body.features-lightbox-open {
+    overflow: hidden;
+}

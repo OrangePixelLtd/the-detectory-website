@@ -272,4 +272,101 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         });
     }
+
+    // 10. Features lightbox — tap any card/phone-screen to open fullscreen, zoomable
+    const lightbox = document.querySelector('.features-lightbox');
+    const lightboxEl = lightbox?.querySelector('.features-lightbox-swiper');
+
+    if (typeof Swiper !== 'undefined' && lightbox && lightboxEl) {
+        const lightboxSwiper = new Swiper(lightboxEl, {
+            zoom: { maxRatio: 3, toggle: true },
+            navigation: {
+                prevEl: lightbox.querySelector('.swiper-button-prev'),
+                nextEl: lightbox.querySelector('.swiper-button-next'),
+            },
+            keyboard: { enabled: true },
+            loop: false,
+            spaceBetween: 20,
+            on: {
+                slideChange(swiper) {
+                    swiper.slides.forEach((slide, i) => {
+                        const v = slide.querySelector('video');
+                        if (!v) return;
+                        if (i === swiper.activeIndex) {
+                            v.currentTime = 0;
+                            v.play().catch(() => {});
+                        } else {
+                            v.pause();
+                        }
+                    });
+                },
+            },
+        });
+
+        const openLightbox = (index) => {
+            lightbox.classList.add('is-open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('features-lightbox-open');
+            lightboxSwiper.update();
+            lightboxSwiper.slideTo(index, 0);
+            // Trigger slideChange manually so video plays even if we opened on the active slide
+            const active = lightboxEl.querySelectorAll('.swiper-slide')[index];
+            const v = active?.querySelector('video');
+            if (v) {
+                v.currentTime = 0;
+                v.play().catch(() => {});
+            }
+        };
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('is-open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('features-lightbox-open');
+            lightbox.querySelectorAll('video').forEach((v) => v.pause());
+            // Reset any zoom
+            if (lightboxSwiper.zoom) lightboxSwiper.zoom.out();
+        };
+
+        // Wire up card taps — any phone-screen on a feature card opens the lightbox
+        document.querySelectorAll('.features-carousel .features-card').forEach((card, i) => {
+            const screen = card.querySelector('.phone-screen');
+            if (!screen) return;
+            screen.setAttribute('tabindex', '0');
+            screen.setAttribute('role', 'button');
+            screen.setAttribute('aria-label', 'View screenshot larger');
+            screen.addEventListener('click', (e) => {
+                e.preventDefault();
+                openLightbox(i);
+            });
+            screen.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openLightbox(i);
+                }
+            });
+        });
+
+        // Also make the desktop sticky-phone media clickable (uses the same index)
+        document.querySelectorAll('.features-showcase .features-screenshot').forEach((el, i) => {
+            el.style.cursor = 'zoom-in';
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                openLightbox(i);
+            });
+        });
+
+        // Close handlers
+        lightbox.querySelector('.features-lightbox-close').addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            // Click on backdrop (not on media/controls) closes
+            if (e.target === lightbox || e.target.classList.contains('swiper-slide')) {
+                closeLightbox();
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('is-open')) {
+                closeLightbox();
+            }
+        });
+    }
 });

@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'APP_LANDING_VERSION', '1.2.35' );
+define( 'APP_LANDING_VERSION', '1.2.36' );
 
 /**
  * Theme Setup
