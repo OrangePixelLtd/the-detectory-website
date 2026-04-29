@@ -24,12 +24,12 @@ $problems = array(
     array(
         'icon'  => 'bell-off',
         'title' => 'Half the club missed the message',
-        'text'  => 'Posted on WhatsApp. Shared on Facebook. Pinned to the noticeboard. Three members still turn up at the wrong field.',
+        'text'  => 'Posted in the group chat. Shared on the social-media page. Pinned to the noticeboard. Three members still turn up at the wrong field.',
     ),
     array(
         'icon'  => 'layers',
         'title' => 'A different tool for every job',
-        'text'  => 'WhatsApp for chat. A spreadsheet for members. Email for notices. A biscuit tin of permissions. Somehow it all has to stay straight.',
+        'text'  => 'A messaging app for chat. A spreadsheet for members. Email for notices. A biscuit tin for permissions. Somehow it all has to stay straight.',
     ),
 );
 ?>

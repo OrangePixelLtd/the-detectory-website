@@ -61,8 +61,8 @@ $features = array(
     <div class="container">
         <div class="text-center" data-animate="fade-in">
             <span class="section-label">Features</span>
-            <h2 class="section-title">Focused features. No filler.</h2>
-            <p class="section-subtitle">Everything you need to manage club life or stay organised as a solo detectorist — nothing you don't.</p>
+            <h2 class="section-title">All the features you need, that the others don't have.</h2>
+            <p class="section-subtitle">Group chats and social-media pages each do part of the job. The Detectory does the whole thing — events, RSVPs, permissions, finds logs, and the bits between.</p>
         </div>
 
         <div class="features-showcase">

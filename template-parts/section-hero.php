@@ -13,11 +13,11 @@
         <div class="hero-grid">
             <div class="hero-intro">
                 <h1 class="hero-title" data-animate="fade-in">
-                    A proper home for your <span class="text-gradient">detecting club</span>
+                    Your club. Your finds. <span class="text-gradient">Finally in one place.</span>
                 </h1>
 
                 <p class="hero-subtitle" data-animate="fade-in" data-animate-delay="0.1s">
-                    Built for UK metal detecting clubs by a detectorist who was sick of losing Saturdays to his club's WhatsApp. Events, members, permissions, posts, and finds — one private, quiet place that fits how your club actually works.
+                    Events, RSVPs, permissions, posts, and a private finds log — built for UK detecting clubs and the detectorists in them. No group chat. No social media. No clipboards.
                 </p>
             </div>
 
@@ -53,7 +53,7 @@
                 </div>
 
                 <p class="hero-note" data-animate="fade-in" data-animate-delay="0.3s">
-                    For clubs, their members, and solo detectorists. Private by default.
+                    Built by a detectorist. Private by default.
                 </p>
             </div>
         </div>

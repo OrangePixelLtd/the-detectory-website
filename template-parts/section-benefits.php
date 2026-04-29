@@ -8,33 +8,33 @@
 $benefits = array(
     array(
         'icon'  => 'lock',
-        'title' => 'Private clubs by default',
-        'text'  => 'Your club is invite-only. Members, posts, and events stay within the club — not visible to the public.',
+        'title' => 'Private, and staying that way',
+        'text'  => 'Your club isn\'t searchable, crawlable, or visible from outside. No strangers scrolling past your best hammered.',
     ),
     array(
         'icon'  => 'calendar',
-        'title' => 'Events and RSVPs sorted',
-        'text'  => 'Create events, collect RSVPs, and share all the details in one place. No more chasing replies.',
+        'title' => 'Fewer missed dig days',
+        'text'  => 'The farm gate, the time, and who\'s turning up — all in one place. RSVPs included, so the organiser knows the numbers.',
     ),
     array(
         'icon'  => 'megaphone',
-        'title' => 'Clear club communication',
-        'text'  => 'Post updates, share news, and keep members informed without relying on group chats.',
+        'title' => 'A quieter group chat',
+        'text'  => 'Club business lands where it should. The group chat can go back to being the group chat.',
     ),
     array(
         'icon'  => 'smartphone',
-        'title' => 'A phone app, through and through',
-        'text'  => 'No web version, no clunky desktop bolt-on — just an app that opens fast, does what you need, and gets out of the way.',
+        'title' => 'Made for your pocket',
+        'text'  => 'Opens fast, does what you need, closes. No desktop bolt-on to wrangle, no web portal to bookmark.',
     ),
     array(
         'icon'  => 'compass',
-        'title' => 'Discover clubs and events',
-        'text'  => 'Find detecting clubs near you or browse public events. A simple way in for anyone looking to get involved.',
+        'title' => 'A front door for newcomers',
+        'text'  => 'People can find your club and your open events without needing a social-media account or knowing someone already in it.',
     ),
     array(
         'icon'  => 'map-pin',
-        'title' => 'Log finds privately',
-        'text'  => 'Keep a personal record of your finds and detecting sessions. Your data, your eyes only — whether in a club or solo.',
+        'title' => 'A log that stays yours',
+        'text'  => 'Photos, notes, locations — private to you by default, shareable only when you choose. On a new phone or an old one, it\'s still there.',
     ),
 );
 ?>
@@ -43,8 +43,8 @@ $benefits = array(
     <div class="container">
         <div class="text-center" data-animate="fade-in">
             <span class="section-label">Benefits</span>
-            <h2 class="section-title">Built around how detectorists actually work</h2>
-            <p class="section-subtitle">Whether you run a club or detect solo, every feature exists to make your detecting life simpler and better organised.</p>
+            <h2 class="section-title">What changes when your club moves in</h2>
+            <p class="section-subtitle">Beyond the feature list — here's what actually shifts when The Detectory replaces the patchwork.</p>
         </div>
 
         <div class="benefits-grid grid grid-3">

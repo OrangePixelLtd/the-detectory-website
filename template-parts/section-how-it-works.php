@@ -23,8 +23,8 @@ $steps = array(
     ),
     array(
         'number' => '04',
-        'title'  => 'Everything in one place',
-        'text'   => 'Events, RSVPs, news, finds — whether you\'re running a club or detecting on your own, it\'s all here.',
+        'title'  => 'Invite your members',
+        'text'   => 'Send them the link. Once they\'re in, events, RSVPs, and posts flow through one place — no more group-chat relay races.',
     ),
 );
 ?>

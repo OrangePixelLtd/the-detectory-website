@@ -10,13 +10,13 @@ $audiences = array(
         'icon'  => 'settings',
         'label' => 'Club Organisers',
         'title' => 'Run your club without the chaos',
-        'text'  => 'Manage events, members, and updates in one place. No more juggling WhatsApp, spreadsheets, and paper sign-in sheets.',
+        'text'  => 'Manage events, members, and updates in one place. No more juggling group chats, spreadsheets, and paper sign-in sheets.',
     ),
     array(
         'icon'  => 'users',
         'label' => 'Club Members',
-        'title' => 'Stay in the loop effortlessly',
-        'text'  => 'See upcoming events, RSVP in a tap, and catch every club update without scrolling through endless group chats.',
+        'title' => 'Stay in the loop without scrolling forever',
+        'text'  => 'See upcoming events, RSVP in a tap, and catch every update without digging through group chats.',
     ),
     array(
         'icon'  => 'compass',
@@ -27,8 +27,8 @@ $audiences = array(
     array(
         'icon'  => 'map-pin',
         'label' => 'Solo Detectorists',
-        'title' => 'Stay organised on your own terms',
-        'text'  => 'Log your finds privately, keep a personal record of your detecting sessions, and stay connected to the wider community when you want to.',
+        'title' => 'Your finds, your log, your rules',
+        'text'  => 'A private finds diary — photos, notes, locations — backed up and yours alone. Share what you choose, when you choose.',
     ),
 );
 ?>
@@ -41,7 +41,7 @@ $audiences = array(
         <div class="text-center" data-animate="fade-in">
             <span class="section-label">Who It's For</span>
             <h2 class="section-title">Built for every kind of detectorist</h2>
-            <p class="section-subtitle">Whether you run a club, belong to one, want to find one, or detect on your own — The Detectory fits how you detect.</p>
+            <p class="section-subtitle">Whether you run a club, belong to one, want to join one, or go solo — The Detectory fits how you detect.</p>
         </div>
 
         <div class="audience-grid grid">
