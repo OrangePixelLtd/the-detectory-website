@@ -43,6 +43,12 @@
     .features-showcase-phone {
         position: static;
     }
+
+    /* Pricing — tighten gap, keep 2 columns */
+    .pricing-grid {
+        gap: 1.25rem;
+        max-width: 760px;
+    }
 }
 
 /* Mobile */
@@ -392,6 +398,61 @@
         flex-direction: column;
         text-align: center;
     }
+
+    /* Pricing — stack cards, Pro first, full-width toggle */
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    .pricing-card--featured {
+        order: -1;
+        transform: none;
+    }
+
+    .pricing-card--featured:hover {
+        transform: translateY(-6px);
+    }
+
+    .pricing-toggle-wrap {
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .pricing-toggle {
+        width: 100%;
+        max-width: 360px;
+        justify-content: stretch;
+    }
+
+    .pricing-toggle-pill {
+        flex: 1;
+        justify-content: center;
+        padding: 0.65rem 1rem;
+    }
+
+    .pricing-notes {
+        margin-top: 2.5rem;
+    }
+
+    /* Blog archive — tighten filter row and card padding on mobile */
+    .blog-filters {
+        margin-bottom: 2rem;
+        gap: 0.5rem;
+    }
+
+    .filter-pill {
+        padding: 0.4rem 0.85rem;
+        font-size: 0.8rem;
+    }
+
+    .blog-card-body {
+        padding: 1.25rem;
+    }
+
+    .blog-pagination {
+        margin-top: 2.5rem;
+    }
 }
 
 /* Small mobile */
@@ -435,6 +496,24 @@
     .section-label {
         font-size: 0.65rem;
         padding: 0.35rem 0.75rem;
+    }
+
+    /* Pricing — compact small-mobile sizing */
+    .pricing-card {
+        padding: 1.5rem;
+    }
+
+    .price-amount {
+        font-size: 2.75rem;
+    }
+
+    .pricing-card-prices {
+        min-height: 4.75rem;
+    }
+
+    .pricing-card-ribbon {
+        font-size: 0.65rem;
+        padding: 0.35rem 0.85rem;
     }
 }
 
@@ -485,5 +564,14 @@
     .hero-title {
         background: none;
         -webkit-text-fill-color: var(--color-heading);
+    }
+
+    /* Pricing — disable price-display fade and featured lift */
+    .price-display {
+        transition: none !important;
+    }
+
+    .pricing-card--featured {
+        transform: none !important;
     }
 }

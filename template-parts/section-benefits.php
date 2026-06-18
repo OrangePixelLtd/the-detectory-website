@@ -22,9 +22,9 @@ $benefits = array(
         'text'  => 'Club business lands where it should. The group chat can go back to being the group chat.',
     ),
     array(
-        'icon'  => 'smartphone',
-        'title' => 'Made for your pocket',
-        'text'  => 'Opens fast, does what you need, closes. No desktop bolt-on to wrangle, no web portal to bookmark.',
+        'icon'  => 'sparkle',
+        'title' => 'A second opinion in your pocket',
+        'text'  => 'Photograph a find and get a likely period, type, and similar finds — a starting point for research, not a valuation. (Pro)',
     ),
     array(
         'icon'  => 'compass',
@@ -44,7 +44,7 @@ $benefits = array(
         <div class="text-center" data-animate="fade-in">
             <span class="section-label">Benefits</span>
             <h2 class="section-title">What changes when your club moves in</h2>
-            <p class="section-subtitle">Beyond the feature list — here's what actually shifts when The Detectory replaces the patchwork.</p>
+            <p class="section-subtitle">Beyond the feature list — here's what actually shifts when The Detectory&trade; replaces the patchwork.</p>
         </div>
 
         <div class="benefits-grid grid grid-3">

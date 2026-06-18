@@ -9,13 +9,14 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'APP_LANDING_VERSION', '1.2.39' );
+define( 'APP_LANDING_VERSION', '1.3.5' );
 
 /**
  * Theme Setup
  */
 function app_landing_setup() {
     add_theme_support( 'title-tag' );
+    add_theme_support( 'post-thumbnails' );
     add_theme_support( 'custom-logo', array(
         'height'      => 60,
         'width'       => 200,
@@ -95,6 +96,16 @@ function app_landing_scripts() {
         APP_LANDING_VERSION,
         true
     );
+
+    if ( is_home() || is_category() ) {
+        wp_enqueue_script(
+            'app-landing-blog-filter',
+            get_template_directory_uri() . '/assets/js/blog-filter.js',
+            array(),
+            APP_LANDING_VERSION,
+            true
+        );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'app_landing_scripts' );
 
@@ -102,7 +113,7 @@ add_action( 'wp_enqueue_scripts', 'app_landing_scripts' );
  * Add defer attribute to theme script
  */
 function app_landing_script_attributes( $tag, $handle ) {
-    if ( 'app-landing-scroll' === $handle ) {
+    if ( in_array( $handle, array( 'app-landing-scroll', 'app-landing-blog-filter' ), true ) ) {
         return str_replace( ' src', ' defer src', $tag );
     }
     return $tag;
@@ -159,6 +170,32 @@ function app_landing_favicons() {
     <?php
 }
 add_action( 'wp_head', 'app_landing_favicons', 5 );
+
+/**
+ * Facebook Pixel — base code in <head>
+ */
+function app_landing_facebook_pixel() {
+    ?>
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1724124101939959');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Facebook Pixel Code -->
+    <?php
+}
+add_action( 'wp_head', 'app_landing_facebook_pixel' );
+
+/**
+ * Facebook Pixel — <noscript> fallback after <body>
+ */
+function app_landing_facebook_pixel_noscript() {
+    ?>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1724124101939959&ev=PageView&noscript=1" alt=""/></noscript>
+    <?php
+}
+add_action( 'wp_body_open', 'app_landing_facebook_pixel_noscript' );
 
 /**
  * Includes

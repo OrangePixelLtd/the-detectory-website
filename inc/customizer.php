@@ -13,7 +13,7 @@ function app_landing_customize_register( $wp_customize ) {
 
     // Panel
     $wp_customize->add_panel( 'app_landing_panel', array(
-        'title'    => __( 'The Detectory', 'app-landing' ),
+        'title'    => __( 'The Detectory™', 'app-landing' ),
         'priority' => 30,
     ) );
 
@@ -24,7 +24,7 @@ function app_landing_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'app_landing_app_store_url', array(
-        'default'           => '#',
+        'default'           => 'https://apps.apple.com/us/app/the-detectory/id6755717176',
         'sanitize_callback' => 'esc_url_raw',
     ) );
     $wp_customize->add_control( 'app_landing_app_store_url', array(
@@ -34,7 +34,7 @@ function app_landing_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'app_landing_google_play_url', array(
-        'default'           => '#',
+        'default'           => 'https://play.google.com/store/apps/details?id=com.thedetectory.app',
         'sanitize_callback' => 'esc_url_raw',
     ) );
     $wp_customize->add_control( 'app_landing_google_play_url', array(

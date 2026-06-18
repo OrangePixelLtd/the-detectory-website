@@ -41,7 +41,7 @@ $audiences = array(
         <div class="text-center" data-animate="fade-in">
             <span class="section-label">Who It's For</span>
             <h2 class="section-title">Built for every kind of detectorist</h2>
-            <p class="section-subtitle">Whether you run a club, belong to one, want to join one, or go solo — The Detectory fits how you detect.</p>
+            <p class="section-subtitle">Whether you run a club, belong to one, want to join one, or go solo — The Detectory&trade; fits how you detect.</p>
         </div>
 
         <div class="audience-grid grid">

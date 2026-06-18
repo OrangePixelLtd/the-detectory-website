@@ -51,6 +51,13 @@ $features = array(
         'image' => 'join-club.webp',
         'alt'   => 'Discover and join clubs screen',
     ),
+    array(
+        'icon'  => 'sparkle',
+        'title' => 'AI find identification (Pro)',
+        'text'  => 'Photograph a find and get a likely identification — period, type, similar finds, and where to read more. A starting point for research, not a valuation.',
+        'image' => 'ai-identification.jpeg',
+        'alt'   => 'AI find identification screen showing a photographed find with suggested period and similar finds',
+    ),
 );
 ?>
 
@@ -62,7 +69,7 @@ $features = array(
         <div class="text-center" data-animate="fade-in">
             <span class="section-label">Features</span>
             <h2 class="section-title">All the features you need, that the others don't have.</h2>
-            <p class="section-subtitle">Group chats and social-media pages each do part of the job. The Detectory does the whole thing — events, RSVPs, permissions, finds logs, and the bits between.</p>
+            <p class="section-subtitle">Group chats and social-media pages each do part of the job. The Detectory&trade; does the whole thing — events, RSVPs, permissions, finds logs, and the bits between.</p>
         </div>
 
         <div class="features-showcase">

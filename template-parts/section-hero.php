@@ -17,7 +17,7 @@
                 </h1>
 
                 <p class="hero-subtitle" data-animate="fade-in" data-animate-delay="0.1s">
-                    Events, RSVPs, permissions, posts, and a private finds log — built for UK detecting clubs and the detectorists in them. No group chat. No social media. No clipboards.
+                    Events, RSVPs, permissions, posts, and a private finds log with AI identification — built for UK detecting clubs and the detectorists in them. No group chat. No social media. No clipboards.
                 </p>
             </div>
 
@@ -48,8 +48,21 @@
             </div>
 
             <div class="hero-actions">
-                <div class="hero-cta" data-animate="fade-in" data-animate-delay="0.2s">
-                    <a href="#waitlist" class="btn btn-primary btn-lg">Join the Waitlist</a>
+                <div class="store-buttons" data-animate="fade-in" data-animate-delay="0.2s">
+                    <a href="<?php echo esc_url( get_theme_mod( 'app_landing_app_store_url', app_landing_get_default( 'app_store_url' ) ) ); ?>" class="store-btn" target="_blank" rel="noopener">
+                        <?php echo app_landing_get_svg_icon( 'apple' ); ?>
+                        <span class="store-btn-text">
+                            <span class="store-btn-label"><?php esc_html_e( 'Download on the', 'app-landing' ); ?></span>
+                            <span class="store-btn-store"><?php esc_html_e( 'App Store', 'app-landing' ); ?></span>
+                        </span>
+                    </a>
+                    <a href="<?php echo esc_url( get_theme_mod( 'app_landing_google_play_url', app_landing_get_default( 'google_play_url' ) ) ); ?>" class="store-btn" target="_blank" rel="noopener">
+                        <?php echo app_landing_get_svg_icon( 'google-play' ); ?>
+                        <span class="store-btn-text">
+                            <span class="store-btn-label"><?php esc_html_e( 'Get it on', 'app-landing' ); ?></span>
+                            <span class="store-btn-store"><?php esc_html_e( 'Google Play', 'app-landing' ); ?></span>
+                        </span>
+                    </a>
                 </div>
 
                 <p class="hero-note" data-animate="fade-in" data-animate-delay="0.3s">

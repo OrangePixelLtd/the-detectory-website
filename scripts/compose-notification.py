@@ -7,7 +7,7 @@ BG_PATH = ROOT / 'assets/images/notification.jpeg'
 ICON_PATH = ROOT / 'assets/images/favicon/apple-touch-icon.png'
 OUT_PATH = ROOT / 'assets/images/notification-event-changed.jpeg'
 
-APP_NAME = 'The Detectory'
+APP_NAME = 'The Detectory™'
 TIME_TEXT = 'now'
 TITLE_TEXT = 'Event changed'
 BODY_TEXT = "Tonight's meeting has been called off due to Terry blowing himself up"

@@ -9,7 +9,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <div class="container" style="padding-top: 4rem;">
+    <div class="container" style="padding-top: 5.5rem;">
         <?php
         if ( have_posts() ) :
             while ( have_posts() ) :

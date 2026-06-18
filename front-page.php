@@ -16,6 +16,7 @@ get_header();
     <?php get_template_part( 'template-parts/section', 'how-it-works' ); ?>
     <?php get_template_part( 'template-parts/section', 'features' ); ?>
     <?php get_template_part( 'template-parts/section', 'why' ); ?>
+    <?php get_template_part( 'template-parts/section', 'pricing' ); ?>
     <?php get_template_part( 'template-parts/section', 'cta' ); ?>
 </main>
 

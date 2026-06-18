@@ -47,6 +47,14 @@ function app_landing_get_svg_icon( $name ) {
         'compass' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>',
 
         'map-pin' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>',
+
+        'check' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>',
+
+        'sparkle' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4L12 3z"></path><path d="M19 16l.6 1.8L21.5 18.5l-1.9.6L19 21l-.6-1.9L16.5 18.5l1.9-.7L19 16z"></path></svg>',
+
+        'apple' => '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.564 12.6c-.026-2.66 2.171-3.94 2.27-4.003-1.236-1.808-3.16-2.057-3.847-2.085-1.638-.166-3.197.965-4.03.965-.834 0-2.118-.94-3.482-.914-1.79.027-3.442 1.04-4.363 2.64-1.86 3.225-.477 8.005 1.337 10.625.888 1.282 1.944 2.726 3.328 2.674 1.337-.054 1.842-.866 3.456-.866 1.614 0 2.067.866 3.481.838 1.438-.025 2.349-1.31 3.227-2.6 1.018-1.491 1.436-2.937 1.46-3.013-.032-.014-2.804-1.077-2.836-4.261zM14.93 4.823c.738-.896 1.236-2.138 1.1-3.374-1.063.044-2.353.71-3.117 1.604-.684.79-1.286 2.057-1.123 3.27 1.186.092 2.4-.602 3.14-1.5z"/></svg>',
+
+        'google-play' => '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.788-4.389l2.808 1.626a1 1 0 0 1 0 1.733l-2.81 1.626L15.692 12l2.595-3.682zM5.864 2.661l10.937 6.333-2.302 2.302L5.864 2.661z"/></svg>',
     );
 
     if ( isset( $icons[ $name ] ) ) {
@@ -57,12 +65,25 @@ function app_landing_get_svg_icon( $name ) {
 }
 
 /**
+ * Get the post thumbnail URL, falling back to a default image if none is set.
+ */
+function app_landing_get_post_thumbnail_url( $post_id = null, $size = 'large' ) {
+    $url = get_the_post_thumbnail_url( $post_id, $size );
+
+    if ( $url ) {
+        return $url;
+    }
+
+    return get_template_directory_uri() . '/assets/images/misty-field.jpg';
+}
+
+/**
  * Get default values for Customizer settings.
  */
 function app_landing_get_default( $setting ) {
     $defaults = array(
-        'app_store_url'    => '#',
-        'google_play_url'  => '#',
+        'app_store_url'    => 'https://apps.apple.com/us/app/the-detectory/id6755717176',
+        'google_play_url'  => 'https://play.google.com/store/apps/details?id=com.thedetectory.app',
     );
 
     return isset( $defaults[ $setting ] ) ? $defaults[ $setting ] : '';

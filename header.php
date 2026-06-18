@@ -15,7 +15,7 @@
                 <div class="site-brand"><?php the_custom_logo(); ?></div>
             <?php else : ?>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-brand">
-                    the<span class="brand-accent">detectory</span>
+                    the<span class="brand-accent">detectory</span><span>&trade;</span>
                 </a>
             <?php endif; ?>
 
@@ -44,12 +44,14 @@
     } else {
         ?>
         <ul>
-            <li><a href="#who-its-for"><?php esc_html_e( 'Who It\'s For', 'app-landing' ); ?></a></li>
-            <li><a href="#benefits"><?php esc_html_e( 'Benefits', 'app-landing' ); ?></a></li>
-            <li><a href="#how-it-works"><?php esc_html_e( 'How It Works', 'app-landing' ); ?></a></li>
-            <li><a href="#features"><?php esc_html_e( 'Features', 'app-landing' ); ?></a></li>
-            <li><a href="#why"><?php esc_html_e( 'Why Us', 'app-landing' ); ?></a></li>
-            <li><a href="#waitlist" class="btn btn-primary nav-cta"><?php esc_html_e( 'Join Waitlist', 'app-landing' ); ?></a></li>
+            <li><a href="/#who-its-for"><?php esc_html_e( 'Who It\'s For', 'app-landing' ); ?></a></li>
+            <li><a href="/#benefits"><?php esc_html_e( 'Benefits', 'app-landing' ); ?></a></li>
+            <li><a href="/#how-it-works"><?php esc_html_e( 'How It Works', 'app-landing' ); ?></a></li>
+            <li><a href="/#features"><?php esc_html_e( 'Features', 'app-landing' ); ?></a></li>
+            <li><a href="/#why"><?php esc_html_e( 'Why Us', 'app-landing' ); ?></a></li>
+            <li><a href="/#pricing"><?php esc_html_e( 'Pricing', 'app-landing' ); ?></a></li>
+            <li><a href="/blog"><?php esc_html_e( 'Blog', 'app-landing' ); ?></a></li>
+            <li><a href="/#download" class="btn btn-primary nav-cta"><?php esc_html_e( 'Download', 'app-landing' ); ?></a></li>
         </ul>
         <?php
     }

@@ -8,7 +8,7 @@
 $reasons = array(
     array(
         'title' => 'Built by a detectorist, who happens to be a developer',
-        'text'  => 'I detect. I\'ve sat in club meets where half the membership didn\'t know the rally had moved. Every feature in The Detectory exists because I wanted it to exist for my own club first.',
+        'text'  => 'I detect. I\'ve sat in club meets where half the membership didn\'t know the rally had moved. Every feature in The Detectory™ exists because I wanted it to exist for my own club first.',
     ),
     array(
         'title' => 'Private by default, always',
@@ -24,7 +24,11 @@ $reasons = array(
     ),
     array(
         'title' => 'For the bits between the digs',
-        'text'  => 'The part of detecting that isn\'t detecting — the RSVPs, the permissions, the write-ups — is the part that eats the most time. The Detectory gives that time back.',
+        'text'  => 'The part of detecting that isn\'t detecting — the RSVPs, the permissions, the write-ups — is the part that eats the most time. The Detectory™ gives that time back.',
+    ),
+    array(
+        'title' => 'A head start on the research',
+        'text'  => 'AI find identification gives you a fast first read on what you\'ve dug up — period, type, similar finds — so the evening write-up starts from a clue, not a blank page. Pro plan only.',
     ),
 );
 ?>
@@ -34,10 +38,10 @@ $reasons = array(
         <div class="why-split">
             <div class="why-layout">
                 <div class="why-header" data-animate="fade-in">
-                    <span class="section-label">Why The Detectory</span>
+                    <span class="section-label">Why The Detectory&trade;</span>
                     <h2 class="section-title">Made by a detectorist, for detectorists.</h2>
                     <p class="section-subtitle">
-                        I built The Detectory because I kept losing Saturdays to my club's group chat. It does one thing: it helps detectorists and their clubs stay organised, without getting in the way of the actual detecting.
+                        I built The Detectory&trade; because I kept losing Saturdays to my club's group chat. It does one thing: it helps detectorists and their clubs stay organised, without getting in the way of the actual detecting.
                     </p>
                 </div>
 
